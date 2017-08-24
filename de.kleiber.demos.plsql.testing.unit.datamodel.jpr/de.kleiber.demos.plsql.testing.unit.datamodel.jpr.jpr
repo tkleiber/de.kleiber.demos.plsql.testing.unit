@@ -73,16 +73,19 @@
       <hash n="resourcesContentSet">
          <list n="constituent-sets">
             <hash>
-               <list n="url-path">
-                  <url path="ddl/"/>
-               </list>
-            </hash>
-            <hash>
                <list n="pattern-filters">
                   <string v="+*"/>
                </list>
                <list n="url-path">
                   <url path="."/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="schemas/"/>
                </list>
             </hash>
          </list>
@@ -93,6 +96,7 @@
       <list n="technologyScope">
          <string v="Database"/>
          <string v="Database-Modeling"/>
+         <string v="XML"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
