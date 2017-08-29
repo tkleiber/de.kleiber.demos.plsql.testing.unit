@@ -15,11 +15,19 @@
       </resource>
     </resources>
   </build>
-  <modules/>
+  <modules>
+    <module>de.kleiber.demos.plsql.testing.unit.datamodel.jpr</module>
+  </modules>
   <dependencies>
     <dependency>
       <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
       <artifactId>Project1</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.datamodel.jpr</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
     </dependency>
