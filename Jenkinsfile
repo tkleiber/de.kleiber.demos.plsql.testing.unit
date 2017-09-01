@@ -1,3 +1,8 @@
 pipeline {
-    /* insert Declarative Pipeline here */
+  agent none
+  stages {
+    stage ('Test') {
+      echo 'Configure'
+    }
+  }
 }
