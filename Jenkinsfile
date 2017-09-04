@@ -4,6 +4,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'git rev-parse --abbrev-ref HEAD'
+        sh 'printenv'
         sh '''echo 1: ${GIT_BRANCH}
 if [ -z ${GIT_BRANCH+x} ];
 then
