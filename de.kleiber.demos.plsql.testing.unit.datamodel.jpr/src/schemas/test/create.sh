@@ -1,8 +1,8 @@
 #!/bin/bash
-echo ${GIT_BRANCH}
-if [ -z ${GIT_BRANCH+x} ];
+echo ${BUILD_TAG}
+if [ -z ${BUILD_TAG+x} ];
 then
-   echo "GIT_BRANCH is unset";
+   echo "BUILD_TAG is unset";
 else
-   echo "GIT_BRANCH is set to '$GIT_BRANCH'";
+   echo "BUILD_TAG is set to '$BUILD_TAG'";
 fi

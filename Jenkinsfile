@@ -5,12 +5,12 @@ pipeline {
       steps {
         sh 'git rev-parse --abbrev-ref HEAD'
         sh 'printenv'
-        sh '''echo 1: ${GIT_BRANCH}
-if [ -z ${GIT_BRANCH+x} ];
+        sh '''echo 1: ${BUILD_TAG}
+if [ -z ${BUILD_TAG+x} ];
 then
-  echo "GIT_BRANCH is unset";
+  echo "BUILD_TAG is unset";
 else
-  echo "GIT_BRANCH is set to '$GIT_BRANCH'";
+  echo "BUILD_TAG is set to '$BUILD_TAG'";
 fi'''
         sh '''echo 2:
 /bin/bash de.kleiber.demos.plsql.testing.unit.datamodel.jpr/src/schemas/test/create.sh'''
