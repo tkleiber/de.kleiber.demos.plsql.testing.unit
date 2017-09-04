@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'git symbolic-ref --short HEAD'
+        sh 'git rev-parse --abbrev-ref HEAD'
       }
     }
   }
