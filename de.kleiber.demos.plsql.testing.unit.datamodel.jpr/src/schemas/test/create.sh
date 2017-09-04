@@ -1,4 +1,5 @@
 #!/bin/bash
+echo ${GIT_BRANCH}
 if [ -z ${GIT_BRANCH+x} ];
 then
    echo "GIT_BRANCH is unset";
