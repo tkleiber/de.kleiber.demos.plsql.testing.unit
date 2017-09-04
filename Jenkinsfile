@@ -1,9 +1,8 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Test') {
       steps {
-        echo 'Test'
         sh 'git symbolic-ref --short HEAD'
       }
     }
