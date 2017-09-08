@@ -20,6 +20,53 @@
     </resources>
     <plugins>
       <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+        <version>2.2.3</version>
+        <executions>
+          <execution>
+            <id>get-the-git-infos</id>
+            <goals>
+              <goal>revision</goal>
+            </goals>
+            <phase>initialize</phase>
+          </execution>
+          <execution>
+            <id>validate-the-git-infos</id>
+            <goals>
+              <goal>validateRevision</goal>
+            </goals>
+            <!-- *NOTE*: The default phase of validateRevision is verify, but in case you want to change it, you can do so by adding the phase here -->
+            <phase>package</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <id>plsql-test</id>
+          </execution>
+        </executions>
+        <configuration>
+          <executable>C:\Oracle\XE110000\app\oracle\product\11.2.0\server\bin\sqlplus</executable>
+          <!--environmentVariables>
+            <LD_LIBRARY_PATH>C:\Oracle\XE110000\app\oracle\product\11.2.0\server\lib</LD_LIBRARY_PATH>
+          </environmentVariables-->
+          <arguments>
+            <argument>hr/hr@xe</argument>
+            <argument>@src/test/plsql/create.sql</argument>
+            <argument>${git.branch}</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+      <plugin>
         <artifactId>liquibase-maven-plugin</artifactId>
         <groupId>org.liquibase</groupId>
         <version>3.5.3</version>
@@ -39,112 +86,11 @@
         </configuration>
         <executions>
           <execution>
-            <phase>process-resources</phase>
+            <phase>process-test-resources</phase>
             <goals>
               <goal>update</goal>
             </goals>
             <id>update-schema</id>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>sql-maven-plugin</artifactId>
-        <version>1.5</version>
-        <dependencies>
-          <dependency>
-            <groupId>com.oracle.javavm.jrf</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>12.1.0-2-1</version>
-          </dependency>
-        </dependencies>
-        <!-- common configuration shared by all executions -->
-        <configuration>
-          <driver>oracle.jdbc.driver.OracleDriver</driver>
-          <url>jdbc:oracle:thin:@localhost:1521:xe</url>
-          <username>hr</username>
-          <password>hr</password>
-          <delimiter>/</delimiter>
-          <delimiterType>row</delimiterType>
-          <keepFormat>true</keepFormat>
-        </configuration>
-        <executions>
-          <execution>
-            <id>create-schema</id>
-            <phase>process-test-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <orderFile>ascending</orderFile>
-              <delimiter>;</delimiter>
-              <delimiterType>normal</delimiterType>
-              <onError>continue</onError>
-              <keepFormat>false</keepFormat>
-              <fileset>
-                <basedir>src/main/sql</basedir>
-                <includes>
-                  <include>**/*.sql</include>
-                </includes>
-              </fileset>
-            </configuration>
-          </execution>
-          <execution>
-            <id>create-plsql-packages</id>
-            <phase>process-test-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <orderFile>ascending</orderFile>
-              <fileset>
-                <basedir>src/main/plsql</basedir>
-                <includes>
-                  <include>**/*.pks</include>
-                  <include>**/*.pkb</include>
-                  <include>**/*.sf</include>
-                </includes>
-              </fileset>
-            </configuration>
-          </execution>
-          <execution>
-            <id>insert-data</id>
-            <phase>process-test-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <orderFile>ascending</orderFile>
-              <delimiter>;</delimiter>
-              <delimiterType>normal</delimiterType>
-              <onError>continue</onError>
-              <keepFormat>false</keepFormat>
-              <fileset>
-                <basedir>src/main/resources/data</basedir>
-                <includes>
-                  <include>**/*.sql</include>
-                </includes>
-              </fileset>
-            </configuration>
-          </execution>
-          <execution>
-            <id>create-plsql-test-packages</id>
-            <phase>process-test-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <orderFile>ascending</orderFile>
-              <fileset>
-                <basedir>src/test/plsql</basedir>
-                <includes>
-                  <include>**/*.pks</include>
-                  <include>**/*.pkb</include>
-                  <include>**/*.sf</include>
-                  <include>**/*.sp</include>
-                </includes>
-              </fileset>
-            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -158,6 +104,7 @@
             <goals>
               <goal>exec</goal>
             </goals>
+            <id>plsql-test</id>
           </execution>
         </executions>
         <configuration>
@@ -168,6 +115,7 @@
           <arguments>
             <argument>hr/hr@xe</argument>
             <argument>@src/test/plsql/run.sql</argument>
+            <argument>${git.branch}</argument>
           </arguments>
         </configuration>
       </plugin>
