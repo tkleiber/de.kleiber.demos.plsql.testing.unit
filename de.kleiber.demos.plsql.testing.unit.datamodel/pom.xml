@@ -7,6 +7,8 @@
     <db.service>orcl</db.service>
     <db.user>hr</db.user>
     <db.password>oracle</db.password>
+    <db.systemuser>system</db.systemuser>
+    <db.systempassword>oracle</db.systempassword>
     <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
   </properties>
   <modelVersion>4.0.0</modelVersion>
@@ -57,19 +59,14 @@
             <goals>
               <goal>exec</goal>
             </goals>
-            <phase>initialize</phase>
+            <phase>pre-integration-test</phase>
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>
-                  ${db.user}/${db.password}@${db.service}
-                </argument>
-                <argument>
-                  @src/test/plsql/create.sql
-                </argument>
-                <argument>
-                  ${git.branch}
-                </argument>
+                <argument>${db.systemuser}/${db.systempassword}@${db.service}</argument>
+                <argument>@src/test/plsql/create.sql</argument>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>${db.password}</argument>
               </arguments>
             </configuration>
           </execution>
@@ -78,13 +75,29 @@
             <goals>
               <goal>exec</goal>
             </goals>
-            <phase>test</phase>
+            <phase>integration-test</phase>
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>${db.user}/${db.password}@${db.service}</argument>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
                 <argument>@src/test/plsql/run.sql</argument>
-                <argument>${git.branch}</argument>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>schema-delete</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>post-integration-test</phase>
+            <configuration>
+              <executable>${sqlplus.path}sqlplus</executable>
+              <arguments>
+                <argument>${db.systemuser}/${db.systempassword}@${db.service}</argument>
+                <argument>@src/test/plsql/drop.sql</argument>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>${db.password}</argument>
               </arguments>
             </configuration>
           </execution>
@@ -105,12 +118,12 @@
           <changeLogFile>src/schemas/test/master.xml</changeLogFile>
           <driver>oracle.jdbc.driver.OracleDriver</driver>
           <url>jdbc:oracle:thin:@//${db.host}:${db.port}/${db.service}</url>
-          <username>${db.user}</username>
+          <username>${db.user}_${git.branch}_${git.commit.id.abbrev}</username>
           <password>${db.password}</password>
         </configuration>
         <executions>
           <execution>
-            <phase>generate-resources</phase>
+            <phase>pre-integration-test</phase>
             <goals>
               <goal>update</goal>
             </goals>
