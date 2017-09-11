@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <db.host>localhost</db.host>
+    <db.port>1521</db.port>
+    <db.service>orcl</db.service>
+    <db.user>hr</db.user>
+    <db.password>oracle</db.password>
+    <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
   </properties>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
@@ -53,10 +59,10 @@
             </goals>
             <phase>initialize</phase>
             <configuration>
-              <executable>/home/oracle/LDLIB/sqlplus</executable>
+              <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
                 <argument>
-                  hr/oracle@orcl
+                  ${db.user}/${db.password}@${db.service}
                 </argument>
                 <argument>
                   @src/test/plsql/create.sql
@@ -74,9 +80,9 @@
             </goals>
             <phase>test</phase>
             <configuration>
-              <executable>/home/oracle/LDLIB/sqlplus</executable>
+              <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>hr/oracle@orcl</argument>
+                <argument>${db.user}/${db.password}@${db.service}</argument>
                 <argument>@src/test/plsql/run.sql</argument>
                 <argument>${git.branch}</argument>
               </arguments>
@@ -98,9 +104,9 @@
         <configuration>
           <changeLogFile>src/schemas/test/master.xml</changeLogFile>
           <driver>oracle.jdbc.driver.OracleDriver</driver>
-          <url>jdbc:oracle:thin:@//localhost:1521/orcl</url>
-          <username>hr</username>
-          <password>oracle</password>
+          <url>jdbc:oracle:thin:@//${db.host}:${db.port}/${db.service}</url>
+          <username>${db.user}</username>
+          <password>${db.password}</password>
         </configuration>
         <executions>
           <execution>
