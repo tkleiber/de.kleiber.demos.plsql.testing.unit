@@ -25,7 +25,7 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
-      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.datamodel.jpr/de.kleiber.demos.plsql.testing.unit.datamodel.jpr.jpr"/></hash>
+      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.datamodel/de.kleiber.demos.plsql.testing.unit.datamodel.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
       <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">

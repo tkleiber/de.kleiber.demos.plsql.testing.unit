@@ -15,9 +15,7 @@
       </resource>
     </resources>
   </build>
-  <modules>
-    <module>de.kleiber.demos.plsql.testing.unit.datamodel.jpr</module>
-  </modules>
+  <modules/>
   <dependencies>
     <dependency>
       <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
