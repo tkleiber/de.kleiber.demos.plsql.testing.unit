@@ -4,12 +4,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <db.host>localhost</db.host>
     <db.port>1521</db.port>
-    <db.service>orcl</db.service>
     <db.user>hr</db.user>
     <db.password>oracle</db.password>
     <db.systemuser>system</db.systemuser>
     <db.systempassword>oracle</db.systempassword>
-    <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
   </properties>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
@@ -70,7 +68,7 @@
               </arguments>
             </configuration>
           </execution>
-           <execution>
+          <execution>
             <id>plsql-test</id>
             <goals>
               <goal>exec</goal>
@@ -102,7 +100,7 @@
             </configuration>
           </execution>
         </executions>
-     </plugin>
+      </plugin>
       <plugin>
         <artifactId>liquibase-maven-plugin</artifactId>
         <groupId>org.liquibase</groupId>
@@ -131,7 +129,32 @@
           </execution>
         </executions>
       </plugin>
-     </plugins>
+    </plugins>
   </build>
-  <profiles></profiles>
+  <profiles>
+    <profile>
+      <id>Windows</id>
+      <activation>
+        <os>
+          <family>Windows</family>
+        </os>
+      </activation>
+      <properties>
+        <db.service>xe</db.service>
+        <sqlplus.path>C:\Oracle\XE110000\app\oracle\product\11.2.0\server\bin\</sqlplus.path>
+      </properties>
+    </profile>
+    <profile>
+      <id>Linux</id>
+      <activation>
+        <os>
+          <family>Linux</family>
+        </os>
+      </activation>
+      <properties>
+        <db.service>orcl</db.service>
+        <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
+      </properties>
+    </profile>
+  </profiles>
 </project>
