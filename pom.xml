@@ -4,6 +4,14 @@
   <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
   <artifactId>de.kleiber.demos.plsql.testing.unit</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <description>Super POM for de.kleiber.demos.plsql.testing.unit</description>
+  <modules>
+    <module>de.kleiber.demos.plsql.testing.unit.parent</module>
+    <module>de.kleiber.demos.plsql.testing.unit.setup</module>
+    <module>de.kleiber.demos.plsql.testing.unit.datamodel</module>
+    <module>de.kleiber.demos.plsql.testing.unit.plsql</module>
+    <module>de.kleiber.demos.plsql.testing.unit.teardown</module>
+  </modules>
   <packaging>pom</packaging>
   <build>
     <resources>
@@ -15,17 +23,34 @@
       </resource>
     </resources>
   </build>
-  <modules/>
   <dependencies>
     <dependency>
       <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
-      <artifactId>Project1</artifactId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.parent</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.setup</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
       <artifactId>de.kleiber.demos.plsql.testing.unit.datamodel.jpr</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.plsql</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.teardown</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
     </dependency>

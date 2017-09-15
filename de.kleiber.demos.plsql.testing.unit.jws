@@ -26,10 +26,24 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.datamodel/de.kleiber.demos.plsql.testing.unit.datamodel.jpr"/></hash>
+      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.parent/de.kleiber.demos.plsql.testing.unit.parent.jpr"/></hash>
+      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.plsql/de.kleiber.demos.plsql.testing.unit.plsql.jpr"/></hash>
+      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.setup/de.kleiber.demos.plsql.testing.unit.setup.jpr"/></hash>
+      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.teardown/de.kleiber.demos.plsql.testing.unit.teardown.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
       <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
          <url n="pomfileURL" path="pom.xml"/>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="ApplicationSrcContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
       </hash>
    </hash>
 </jws:workspace>
