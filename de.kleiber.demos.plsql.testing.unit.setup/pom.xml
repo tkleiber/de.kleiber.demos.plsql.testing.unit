@@ -32,7 +32,7 @@
             <goals>
               <goal>exec</goal>
             </goals>
-            <phase>pre-integration-test</phase>
+            <phase>initialize</phase>
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
@@ -41,6 +41,9 @@
                 <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
                 <argument>${db.password}</argument>
               </arguments>
+              <environmentVariables>
+                <SQLPATH>${sqlplus.sqlpath}</SQLPATH>
+              </environmentVariables>
             </configuration>
           </execution>
         </executions>

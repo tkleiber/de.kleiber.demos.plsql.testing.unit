@@ -21,7 +21,6 @@
         </includes>
       </resource>
     </resources>
-    <outputDirectory>classes/</outputDirectory>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -33,7 +32,7 @@
             <goals>
               <goal>exec</goal>
             </goals>
-            <phase>integration-test</phase>
+            <phase>test</phase>
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
@@ -41,6 +40,9 @@
                 <argument>@src/run.sql</argument>
                 <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
               </arguments>
+              <environmentVariables>
+                <SQLPATH>${sqlplus.sqlpath}</SQLPATH>
+              </environmentVariables>
             </configuration>
           </execution>
         </executions>

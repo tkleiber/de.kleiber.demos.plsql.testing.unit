@@ -81,6 +81,7 @@
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
+         <string v="Database"/>
          <string v="Maven"/>
          <string v="XML"/>
       </list>
