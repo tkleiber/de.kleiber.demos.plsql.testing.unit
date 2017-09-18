@@ -41,7 +41,8 @@
                 <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
               </arguments>
               <environmentVariables>
-                <SQLPATH>${sqlplus.sqlpath}</SQLPATH>
+                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
+                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
               </environmentVariables>
             </configuration>
           </execution>
