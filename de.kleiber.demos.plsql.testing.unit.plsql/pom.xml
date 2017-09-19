@@ -23,6 +23,24 @@
     </resources>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>generate-test-resources</phase>
+            <configuration>
+              <tasks>
+                <mkdir dir="./target/results/utplsql/"/>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
@@ -74,15 +92,27 @@
             </goals>
             <phase>test</phase>
             <configuration>
-              <executable>${sqlplus.path}sqlplus</executable>
+              <executable>${utplsql.cli}</executable>
               <arguments>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
-                <argument>@src/test/run.sql</argument>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>run</argument>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
+                <argument>--color</argument>
+                <argument>-f=ut_documentation_reporter</argument>
+                <argument>-o=./target/results/utplsql/ut_documentation_reporter.log</argument>
+                <argument>-s</argument>
+                <argument>-f=ut_coverage_sonar_reporter</argument>
+                <argument>-o=./target/results/utplsql/ut_coverage_sonar_reporter.xml</argument>
+                <argument>-f=ut_coverage_html_reporter</argument>
+                <argument>-o=./target/results/utplsql/ut_coverage_html_reporter.html</argument>
+                <argument>-f=ut_coveralls_reporter</argument>
+                <argument>-o=./target/results/utplsql/ut_coveralls_reporter.json</argument>
+                <argument>-f=ut_sonar_test_reporter</argument>
+                <argument>-o=./target/results/utplsql/ut_sonar_test_reporter.xml</argument>
+               <!--argument>-source_path=main</argument>
+                <argument>-owner=${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>-test_path=test</argument-->
               </arguments>
               <environmentVariables>
-                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
-                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
               </environmentVariables>
             </configuration>
           </execution>

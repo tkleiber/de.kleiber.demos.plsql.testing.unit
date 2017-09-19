@@ -61,7 +61,7 @@
       <properties>
         <db.service>xe</db.service>
         <sqlplus.path>C:\Oracle\XE110000\app\oracle\product\11.2.0\server\bin\</sqlplus.path>
-        <utplsql.cli.path></utplsql.cli.path>
+        <utplsql.cli>X:\Doag\utPLSQL-cli\bin\utplsql.bat</utplsql.cli>
       </properties>
     </profile>
     <profile>
