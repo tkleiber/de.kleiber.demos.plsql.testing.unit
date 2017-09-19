@@ -1,6 +1,6 @@
 PROMPT run tests for schema &1
 BEGIN
-  ut.run(ut_xunit_reporter());
+  ut.run();
 END;
 /
 exit 0;

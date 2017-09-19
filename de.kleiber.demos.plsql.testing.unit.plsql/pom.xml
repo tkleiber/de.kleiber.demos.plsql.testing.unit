@@ -28,6 +28,46 @@
         <version>1.6.0</version>
         <executions>
           <execution>
+            <id>plsql-compile</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>compile</phase>
+            <configuration>
+              <executable>${sqlplus.path}sqlplus</executable>
+              <arguments>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
+                <argument>@src/main/compile.sql</argument>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>${project.build.sourceDirectory}</argument>
+              </arguments>
+              <environmentVariables>
+                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
+                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
+              </environmentVariables>
+            </configuration>
+          </execution>
+          <execution>
+            <id>plsql-test-compile</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>test-compile</phase>
+            <configuration>
+              <executable>${sqlplus.path}sqlplus</executable>
+              <arguments>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
+                <argument>@src/test/compile.sql</argument>
+                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>${project.build.sourceDirectory}</argument>
+              </arguments>
+              <environmentVariables>
+                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
+                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
+              </environmentVariables>
+            </configuration>
+          </execution>
+          <execution>
             <id>plsql-test</id>
             <goals>
               <goal>exec</goal>
@@ -37,7 +77,7 @@
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
                 <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
-                <argument>@src/run.sql</argument>
+                <argument>@src/test/run.sql</argument>
                 <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
               </arguments>
               <environmentVariables>
