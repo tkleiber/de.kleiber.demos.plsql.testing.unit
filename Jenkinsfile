@@ -14,7 +14,7 @@ pipeline {
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: true,
-              reportDir: '**',
+              reportDir: 'de.kleiber.demos.plsql.testing.unit.plsql/target/results/utplsql',
               reportFiles: 'ut_coverage_html_reporter.html',
               reportName: 'utPLSQL Coveraga Report'
            ]
