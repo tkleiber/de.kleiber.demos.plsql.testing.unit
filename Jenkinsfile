@@ -14,7 +14,7 @@ pipeline {
               allowMissing: false,
               alwaysLinkToLastBuild: false,
               keepAll: true,
-              reportDir: 'target/results/utplsql',
+              reportDir: '**',
               reportFiles: 'ut_coverage_html_reporter.html',
               reportName: 'utPLSQL Coveraga Report'
            ]
