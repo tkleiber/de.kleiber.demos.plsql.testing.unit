@@ -74,7 +74,7 @@
       <properties>
         <db.service>orcl</db.service>
         <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
-        <utplsql.cli.path>/home/oracle/utPLSQL-utPLSQL-sql-cli-5aef96d/</utplsql.cli.path>
+        <utplsql.cli>/home/oracle/utPLSQL-cli/bin/utplsql</utplsql.cli>
       </properties>
     </profile>
   </profiles>
