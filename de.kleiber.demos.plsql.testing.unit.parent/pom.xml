@@ -38,7 +38,7 @@
             </goals>
             <phase>validate</phase>
             <configuration>
-              <verbose>false</verbose>
+              <verbose>true</verbose>
             </configuration>
           </execution>
           <execution>
