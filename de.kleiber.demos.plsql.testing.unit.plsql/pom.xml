@@ -108,7 +108,9 @@
                 <argument>-o=./target/results/utplsql/ut_coveralls_reporter.json</argument>
                 <argument>-f=ut_sonar_test_reporter</argument>
                 <argument>-o=./target/results/utplsql/ut_sonar_test_reporter.xml</argument>
-               <!--argument>-source_path=main</argument>
+                <argument>-f=ut_xunit_reporter</argument>
+                <argument>-o=./target/results/utplsql/ut_xunit_reporter.xml</argument>
+                <!--argument>-source_path=main</argument>
                 <argument>-owner=${db.user}_${git.commit.id.abbrev}</argument>
                 <argument>-test_path=test</argument-->
               </arguments>
