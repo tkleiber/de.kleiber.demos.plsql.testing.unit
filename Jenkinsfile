@@ -4,6 +4,7 @@ pipeline {
     stage('Test') {
       steps {
         tool(name: 'Maven 3.2.5', type: 'maven')
+        sh 'mvn clean verify'
       }
     }
   }
