@@ -37,7 +37,7 @@
           <changeLogFile>src/master.xml</changeLogFile>
           <driver>oracle.jdbc.driver.OracleDriver</driver>
           <url>jdbc:oracle:thin:@//${db.host}:${db.port}/${db.service}</url>
-          <username>${db.user}_${git.branch}_${git.commit.id.abbrev}</username>
+          <username>${db.user}_${git.commit.id.abbrev}</username>
           <password>${db.password}</password>
         </configuration>
         <executions>

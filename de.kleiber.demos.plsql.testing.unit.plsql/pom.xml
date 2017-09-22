@@ -54,9 +54,9 @@
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
+                <argument>${db.user}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
                 <argument>@src/main/compile.sql</argument>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>${db.user}_${git.commit.id.abbrev}</argument>
                 <argument>${project.build.sourceDirectory}</argument>
               </arguments>
               <environmentVariables>
@@ -74,9 +74,9 @@
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
+                <argument>${db.user}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
                 <argument>@src/test/compile.sql</argument>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>${db.user}_${git.commit.id.abbrev}</argument>
                 <argument>${project.build.sourceDirectory}</argument>
               </arguments>
               <environmentVariables>
@@ -95,7 +95,7 @@
               <executable>${utplsql.cli}</executable>
               <arguments>
                 <argument>run</argument>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
+                <argument>${db.user}_${git.commit.id.abbrev}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
                 <argument>--color</argument>
                 <argument>-f=ut_documentation_reporter</argument>
                 <argument>-o=./target/results/utplsql/ut_documentation_reporter.log</argument>
@@ -109,7 +109,7 @@
                 <argument>-f=ut_sonar_test_reporter</argument>
                 <argument>-o=./target/results/utplsql/ut_sonar_test_reporter.xml</argument>
                <!--argument>-source_path=main</argument>
-                <argument>-owner=${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>-owner=${db.user}_${git.commit.id.abbrev}</argument>
                 <argument>-test_path=test</argument-->
               </arguments>
               <environmentVariables>
