@@ -3,13 +3,21 @@ pipeline {
     node {
       label 'oracle'
     }
-    
+
   }
   stages {
     stage('Build') {
       steps {
         sh 'mvn clean verify'
         junit(testResults: '**/ut_xunit_reporter.xml', allowEmptyResults: true)
+        publishHTML target: [
+              allowMissing: false,
+              alwaysLinkToLastBuild: false,
+              keepAll: true,
+              reportDir: 'target/results/utplsql',
+              reportFiles: 'ut_coverage_html_reporter.html',
+              reportName: 'utPLSQL Coveraga Report'
+           ]
       }
     }
   }

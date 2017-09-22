@@ -28,7 +28,7 @@
         <version>1.6.0</version>
         <executions>
           <execution>
-            <id>C</id>
+            <id>schema-create</id>
             <goals>
               <goal>exec</goal>
             </goals>
