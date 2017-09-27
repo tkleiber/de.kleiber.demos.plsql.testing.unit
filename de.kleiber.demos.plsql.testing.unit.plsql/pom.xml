@@ -86,7 +86,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>plsql-test</id>
+            <id>utplsql-test</id>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -96,25 +96,39 @@
               <arguments>
                 <argument>run</argument>
                 <argument>${db.user}_${git.commit.id.abbrev}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
-                <argument>--color</argument>
+                <argument>-c</argument>
                 <argument>-f=ut_documentation_reporter</argument>
                 <argument>-o=./target/results/utplsql/ut_documentation_reporter.log</argument>
                 <argument>-s</argument>
-                <argument>-f=ut_coverage_sonar_reporter</argument>
-                <argument>-o=./target/results/utplsql/ut_coverage_sonar_reporter.xml</argument>
                 <argument>-f=ut_coverage_html_reporter</argument>
                 <argument>-o=./target/results/utplsql/ut_coverage_html_reporter.html</argument>
-                <argument>-f=ut_coveralls_reporter</argument>
-                <argument>-o=./target/results/utplsql/ut_coveralls_reporter.json</argument>
-                <argument>-f=ut_sonar_test_reporter</argument>
-                <argument>-o=./target/results/utplsql/ut_sonar_test_reporter.xml</argument>
                 <argument>-f=ut_xunit_reporter</argument>
                 <argument>-o=./target/results/utplsql/ut_xunit_reporter.xml</argument>
-                <!--argument>-source_path=main</argument>
-                <argument>-owner=${db.user}_${git.commit.id.abbrev}</argument>
-                <argument>-test_path=test</argument-->
               </arguments>
               <environmentVariables>
+              </environmentVariables>
+            </configuration>
+          </execution>
+          <execution>
+            <id>rspec-test</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>test</phase>
+            <configuration>
+              <executable>rspec</executable>
+              <workingDirectory>src/test_ruby_plsql_spec</workingDirectory>
+              <arguments>
+                <argument>-fd</argument>
+                <argument>-f</argument>
+                <argument>RspecJunitFormatter</argument>
+                <argument>-o</argument>
+                <argument>../../target/results/rspec/test/results.xml</argument>
+              </arguments>
+              <environmentVariables>
+                <NLS_LANG>German_Germany.UTF8</NLS_LANG>
+                <ORACLE_HOME>/u01/app/oracle/product/12.2/db_1</ORACLE_HOME>
+                <PLSQL_COVERAGE>../../target/results/rspec/coverage</PLSQL_COVERAGE>
               </environmentVariables>
             </configuration>
           </execution>
