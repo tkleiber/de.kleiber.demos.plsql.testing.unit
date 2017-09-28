@@ -65,6 +65,7 @@
         <db.service>xe</db.service>
         <sqlplus.path>C:\Oracle\XE110000\app\oracle\product\11.2.0\server\bin\</sqlplus.path>
         <utplsql.cli>X:\Doag\utPLSQL-cli\bin\utplsql.bat</utplsql.cli>
+        <skip.ruby>true</skip.ruby>
       </properties>
     </profile>
     <profile>
@@ -78,6 +79,7 @@
         <db.service>orcl</db.service>
         <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
         <utplsql.cli>/home/oracle/utPLSQL-cli/bin/utplsql</utplsql.cli>
+        <skip.ruby>false</skip.ruby>
       </properties>
     </profile>
   </profiles>

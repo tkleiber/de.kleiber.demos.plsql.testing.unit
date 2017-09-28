@@ -117,6 +117,7 @@
             <phase>test</phase>
             <configuration>
               <executable>rspec</executable>
+              <skip>${skip.ruby}</skip>
               <workingDirectory>src/test_ruby_plsql_spec</workingDirectory>
               <arguments>
                 <argument>-fd</argument>
