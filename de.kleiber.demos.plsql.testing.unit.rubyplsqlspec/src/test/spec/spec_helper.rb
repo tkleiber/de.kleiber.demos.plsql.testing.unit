@@ -11,9 +11,7 @@ database_connections = database_config.keys.map{|k| k.to_sym}
 database_connections.each do |name|
   # params = database_config[name.to_s]
   params = {"username"=>ENV['DB_USERNAME'], "password"=>ENV['DB_PASSWORD'], "database"=>ENV['DB_SERVICE']}
-  puts "params #{params}"
   symbol_params = Hash[*params.map{|k,v| [k.to_sym, v]}.flatten]
-  puts "symbol_params #{symbol_params}"
 
   plsql(name).connect! symbol_params
 

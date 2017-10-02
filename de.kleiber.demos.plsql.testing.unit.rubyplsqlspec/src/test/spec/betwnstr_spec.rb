@@ -1,6 +1,3 @@
-# load 'betwnstr' procedure into the database
-require "betwnstr"
-
 describe "Between string" do
   it "should be correct in normal case" do
     expect(plsql.betwnstr('abcdefg', 2, 5)).to eq 'bcde'
