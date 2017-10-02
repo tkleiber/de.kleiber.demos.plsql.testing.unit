@@ -42,7 +42,7 @@
                 <argument>-f</argument>
                 <argument>RspecJunitFormatter</argument>
                 <argument>-o</argument>
-                <argument>../../target/results/rspec/test/results.xml</argument>
+                <argument>../../target/results/rspec/test/rspec_xunit_reporter.xml</argument>
               </arguments>
               <environmentVariables>
                 <NLS_LANG>German_Germany.UTF8</NLS_LANG>
