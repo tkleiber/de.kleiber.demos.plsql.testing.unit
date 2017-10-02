@@ -28,26 +28,6 @@
         <version>1.6.0</version>
         <executions>
           <execution>
-            <id>plsql-compile</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>compile</phase>
-            <configuration>
-              <executable>${sqlplus.path}sqlplus</executable>
-              <arguments>
-                <argument>${db.user}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
-                <argument>@src/main/compile.sql</argument>
-                <argument>${db.user}_ruby_${git.commit.id.abbrev}</argument>
-                <argument>${project.build.sourceDirectory}</argument>
-              </arguments>
-              <environmentVariables>
-                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
-                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
-              </environmentVariables>
-            </configuration>
-          </execution>
-          <execution>
             <id>rubyplsqlspec-test</id>
             <goals>
               <goal>exec</goal>

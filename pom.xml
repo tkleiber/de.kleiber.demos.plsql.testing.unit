@@ -9,6 +9,7 @@
     <module>de.kleiber.demos.plsql.testing.unit.parent</module>
     <module>de.kleiber.demos.plsql.testing.unit.setup</module>
     <module>de.kleiber.demos.plsql.testing.unit.datamodel</module>
+    <module>de.kleiber.demos.plsql.testing.unit.plsql</module>
     <module>de.kleiber.demos.plsql.testing.unit.utplsql</module>
     <module>de.kleiber.demos.plsql.testing.unit.rubyplsqlspec</module>
     <module>de.kleiber.demos.plsql.testing.unit.teardown</module>
@@ -40,6 +41,12 @@
     <dependency>
       <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
       <artifactId>de.kleiber.demos.plsql.testing.unit.datamodel.jpr</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.plsql</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
     </dependency>
