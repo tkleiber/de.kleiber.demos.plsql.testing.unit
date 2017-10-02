@@ -27,6 +27,7 @@
    <list n="listOfChildren">
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.datamodel/de.kleiber.demos.plsql.testing.unit.datamodel.jpr"/></hash>
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.parent/de.kleiber.demos.plsql.testing.unit.parent.jpr"/></hash>
+      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.rubyplsqlspec/de.kleiber.demos.plsql.testing.unit.rubyplsqlspec.jpr"/></hash>
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.setup/de.kleiber.demos.plsql.testing.unit.setup.jpr"/></hash>
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.teardown/de.kleiber.demos.plsql.testing.unit.teardown.jpr"/></hash>
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.utplsql/de.kleiber.demos.plsql.testing.unit.utplsql.jpr"/></hash>

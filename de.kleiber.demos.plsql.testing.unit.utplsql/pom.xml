@@ -109,30 +109,6 @@
               </environmentVariables>
             </configuration>
           </execution>
-          <execution>
-            <id>rspec-test</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>test</phase>
-            <configuration>
-              <executable>rspec</executable>
-              <skip>${skip.ruby}</skip>
-              <workingDirectory>src/test_ruby_plsql_spec</workingDirectory>
-              <arguments>
-                <argument>-fd</argument>
-                <argument>-f</argument>
-                <argument>RspecJunitFormatter</argument>
-                <argument>-o</argument>
-                <argument>../../target/results/rspec/test/results.xml</argument>
-              </arguments>
-              <environmentVariables>
-                <NLS_LANG>German_Germany.UTF8</NLS_LANG>
-                <ORACLE_HOME>/u01/app/oracle/product/12.2/db_1</ORACLE_HOME>
-                <PLSQL_COVERAGE>../../target/results/rspec/coverage</PLSQL_COVERAGE>
-              </environmentVariables>
-            </configuration>
-          </execution>
         </executions>
       </plugin>
     </plugins>
