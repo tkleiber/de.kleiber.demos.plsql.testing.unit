@@ -9,7 +9,7 @@
     <module>de.kleiber.demos.plsql.testing.unit.parent</module>
     <module>de.kleiber.demos.plsql.testing.unit.setup</module>
     <module>de.kleiber.demos.plsql.testing.unit.datamodel</module>
-    <module>de.kleiber.demos.plsql.testing.unit.plsql</module>
+    <module>de.kleiber.demos.plsql.testing.unit.utplsql</module>
     <module>de.kleiber.demos.plsql.testing.unit.teardown</module>
   </modules>
   <packaging>pom</packaging>
@@ -44,7 +44,7 @@
     </dependency>
     <dependency>
       <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
-      <artifactId>de.kleiber.demos.plsql.testing.unit.plsql</artifactId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.utplsql</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
     </dependency>

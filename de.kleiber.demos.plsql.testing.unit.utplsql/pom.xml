@@ -8,9 +8,9 @@
     <relativePath>../de.kleiber.demos.plsql.testing.unit.parent/</relativePath>
   </parent>
   <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
-  <artifactId>de.kleiber.demos.plsql.testing.unit.plsql</artifactId>
+  <artifactId>de.kleiber.demos.plsql.testing.unit.utplsql</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <description>Project for de.kleiber.demos.plsql.testing.unit.plsql</description>
+  <description>Project for de.kleiber.demos.plsql.testing.unit.utplsql</description>
   <build>
     <sourceDirectory>src/</sourceDirectory>
     <resources>

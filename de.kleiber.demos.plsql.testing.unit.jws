@@ -27,9 +27,9 @@
    <list n="listOfChildren">
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.datamodel/de.kleiber.demos.plsql.testing.unit.datamodel.jpr"/></hash>
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.parent/de.kleiber.demos.plsql.testing.unit.parent.jpr"/></hash>
-      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.plsql/de.kleiber.demos.plsql.testing.unit.plsql.jpr"/></hash>
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.setup/de.kleiber.demos.plsql.testing.unit.setup.jpr"/></hash>
       <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.teardown/de.kleiber.demos.plsql.testing.unit.teardown.jpr"/></hash>
+      <hash><url n="URL" path="de.kleiber.demos.plsql.testing.unit.utplsql/de.kleiber.demos.plsql.testing.unit.utplsql.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
       <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
