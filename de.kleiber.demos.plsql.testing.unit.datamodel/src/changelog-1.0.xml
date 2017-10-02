@@ -3,10 +3,14 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <changeSet author="Torsten Kleiber" id="changelog-1.0">
-        <createTable tableName="TablesAndTables">
-            <column name="COLUMN1" type="TEXT">
-        <constraints nullable="true" primaryKey="false" unique="false"/>
-      </column>
+        <createTable tableName="employees">
+            <column name="employee_id" type="NUMBER">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="commission_pct" type="NUMBER">
+            </column>
+            <column name="salary" type="NUMBER">
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog> 
