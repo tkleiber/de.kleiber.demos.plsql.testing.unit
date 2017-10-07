@@ -3,6 +3,7 @@ PROCEDURE award_bonus (
   emp_id NUMBER, sales_amt NUMBER) AS
   commission    REAL;
   comm_missing  EXCEPTION;
+  PRAGMA EXCEPTION_INIT(comm_missing, -20001);
 BEGIN
   SELECT commission_pct INTO commission
     FROM employees

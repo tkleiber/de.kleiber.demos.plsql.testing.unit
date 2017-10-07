@@ -1,14 +1,20 @@
 CREATE OR REPLACE PACKAGE body test_betwnstr
 AS
-  PROCEDURE basic_usage
-  IS
+  PROCEDURE normal_case IS
   BEGIN
-    ut.expect( betwnstr( '1234567', 2, 5 ) ).to_equal('2345');
+    ut.expect( betwnstr( 'abcdefg', 2, 5 ) ).to_equal('bcde');
   END;
-  PROCEDURE zero_start_position
-  IS
+  PROCEDURE zero_start_value IS
   BEGIN
-    ut.expect( betwnstr( '1234567', 0, 5 ) ).to_equal('12345');
+    ut.expect( betwnstr( 'abcdefg', 0, 5 ) ).to_equal('abcde');
+  END;
+  PROCEDURE way_big_end_value IS
+  BEGIN
+     ut.expect( betwnstr( 'abcdefg', 5, 500 ) ).to_equal('efg');
+  END;
+  PROCEDURE null_string IS
+  BEGIN
+     ut.expect( betwnstr( NULL, 5, 500 ) ).to_equal(NULL);
   END;
 END;
 /

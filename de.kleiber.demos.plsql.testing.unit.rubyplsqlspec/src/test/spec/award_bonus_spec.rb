@@ -11,11 +11,11 @@ describe "Award bonus" do
     end
   end
 
-  it "should raise ORA-06510 exception if commission percentage is missing" do
+  it "should raise ORA-20001 exception if commission percentage is missing" do
     employee_id, commission_pct, salary, sales_amt = 1004, NULL, 10000, 200
     expect {
       plsql.award_bonus(employee_id, sales_amt)
-    }.to raise_error(/ORA-06510/)
+    }.to raise_error(/ORA-20001/)
   end
 
 end
