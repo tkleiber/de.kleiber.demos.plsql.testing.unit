@@ -6,6 +6,10 @@
         <loadData encoding="UTF-8"
                   file="src/changelog-1.1.csv"
                   separator=";"
-                  tableName="employees"/>
+                  tableName="employees">
+            <column name="employee_id" type="NUMERIC"/>
+            <column name="commission_pct" type="NUMERIC"/>
+            <column name="salary" type="NUMERIC"/>
+        </loadData>
     </changeSet>
 </databaseChangeLog> 
