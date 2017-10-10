@@ -10,5 +10,9 @@
       <column name="commission_pct" type="NUMBER"></column>
       <column name="salary" type="NUMBER"></column>
     </createTable>
+    <createTable tableName="award_bonus_dyn_query">
+      <column name="employee_id" type="NUMBER"></column>
+      <column name="sales_amt" type="NUMBER"></column>
+    </createTable>
   </changeSet>
 </databaseChangeLog> 
