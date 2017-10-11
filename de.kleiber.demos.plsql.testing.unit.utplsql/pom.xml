@@ -54,9 +54,9 @@
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
+                <argument>${db.user}_${branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
                 <argument>@src/test/compile.sql</argument>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}</argument>
+                <argument>${db.user}_${branch}_${git.commit.id.abbrev}</argument>
                 <argument>${project.build.sourceDirectory}</argument>
               </arguments>
               <environmentVariables>
@@ -75,7 +75,7 @@
               <executable>${utplsql.cli}</executable>
               <arguments>
                 <argument>run</argument>
-                <argument>${db.user}_${git.branch}_${git.commit.id.abbrev}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
+                <argument>${db.user}_${branch}_${git.commit.id.abbrev}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
                 <argument>-c</argument>
                 <argument>-f=ut_documentation_reporter</argument>
                 <argument>-o=./target/results/utplsql/ut_documentation_reporter.log</argument>
