@@ -9,7 +9,6 @@ pipeline {
     stage('Build') {
       steps {
         withEnv(["GIT_BRANCH=$BRANCH_NAME"]) {
-          sh 'echo $GIT_BRANCH'
           sh 'mvn clean verify'
         }
         junit(testResults: '**/ut_xunit_reporter.xml', allowEmptyResults: true)
