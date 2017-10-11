@@ -36,9 +36,9 @@
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>${db.user}_${branch}_${git.commit.id.abbrev}/${db.password}@${db.service}</argument>
+                <argument>${db.user}/${db.password}@${db.service}</argument>
                 <argument>@src/main/compile.sql</argument>
-                <argument>${db.user}_${branch}_${git.commit.id.abbrev}</argument>
+                <argument>${db.user}</argument>
                 <argument>${project.build.sourceDirectory}</argument>
               </arguments>
               <environmentVariables>

@@ -38,7 +38,7 @@
               <arguments>
                 <argument>${db.systemuser}/${db.systempassword}@${db.service}</argument>
                 <argument>@src/create.sql</argument>
-                <argument>${db.user}_${branch}_${git.commit.id.abbrev}</argument>
+                <argument>${db.user}</argument>
                 <argument>${db.password}</argument>
               </arguments>
               <environmentVariables>
