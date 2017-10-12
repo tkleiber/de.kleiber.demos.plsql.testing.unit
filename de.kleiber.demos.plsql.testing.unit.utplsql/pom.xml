@@ -66,11 +66,27 @@
             </configuration>
           </execution>
           <execution>
-            <id>utplsql-test</id>
+            <id>utplsql-test-reporter-excluded</id>
             <goals>
               <goal>exec</goal>
             </goals>
-            <phase>test</phase>
+            <phase>${reporter.exclude.phase}</phase>
+            <configuration>
+              <executable>${utplsql.cli}</executable>
+              <arguments>
+                <argument>run</argument>
+                <argument>${db.user}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
+              </arguments>
+              <environmentVariables>
+              </environmentVariables>
+            </configuration>
+          </execution>
+          <execution>
+            <id>utplsql-test-reporter-included</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>${reporter.include.phase}</phase>
             <configuration>
               <executable>${utplsql.cli}</executable>
               <arguments>
