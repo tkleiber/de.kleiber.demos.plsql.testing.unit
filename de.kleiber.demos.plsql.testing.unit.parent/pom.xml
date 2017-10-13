@@ -5,7 +5,7 @@
     <branch>${git.branch}</branch>
     <db.host>localhost</db.host>
     <db.port>1521</db.port>
-    <db.user.plain>hr_${branch}_${git.commit.id.abbrev}</db.user.plain>
+    <db.user.plain>${branch}_${git.commit.id.abbrev}</db.user.plain>
     <db.password>oracle</db.password>
     <db.systemuser>system</db.systemuser>
     <db.systempassword>oracle</db.systempassword>
@@ -114,7 +114,7 @@
                 <value>${db.user.plain}</value>
                 <regex>(.*)[/](.*)</regex>
                 <!-- <regex>notmatched</regex>-->
-                <replacement>$1$2</replacement>
+                <replacement>$1_$2</replacement>
                 <failIfNoMatch>false</failIfNoMatch>
                 <!--<failIfNoMatch>true</failIfNoMatch>-->
               </configuration>
