@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean verify -Dbranch=$BRANCH_NAME'
+        sh 'mvn clean verify -Dbranch=$BRANCH_NAME -Dreporter.include.phase=test -Dreporter.exclude.phase=none'
         junit(testResults: '**/ut_xunit_reporter.xml', allowEmptyResults: true)
         publishHTML target: [
           allowMissing: false,
