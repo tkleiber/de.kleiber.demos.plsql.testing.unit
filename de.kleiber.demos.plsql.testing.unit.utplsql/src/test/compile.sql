@@ -11,4 +11,8 @@ show errors
 show errors
 @&2/test/test_tdd.pkb
 show errors
+@&2/test/test_annuitaeten.pks
+show errors
+@&2/test/test_annuitaeten.pkb
+show errors
 exit 0;
