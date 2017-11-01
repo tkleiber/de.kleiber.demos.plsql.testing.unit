@@ -1,7 +1,7 @@
 # Change default connection username, password and database.
 # Specify also host and port if not using tnsnames.ora connection.
 default:
-  username: HR
+  username: feature_ruby_6f2fd76
   password: oracle
   database: orcl
   # host: localhost
