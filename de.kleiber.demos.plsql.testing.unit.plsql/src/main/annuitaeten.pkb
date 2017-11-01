@@ -7,7 +7,7 @@ CREATE OR REPLACE PACKAGE BODY annuitaeten AS
     ) RETURN NUMBER
         IS
     BEGIN
-        RETURN kreditsumme * ( ( ( 1 + zinssatz ) ** laufzeit ) * zinssatz ) / ( ( ( 1 + zinssatz ) ** laufzeit ) - 1 );
+        RETURN round(kreditsumme * ( ( ( 1 + zinssatz ) ** laufzeit ) * zinssatz ) / ( ( ( 1 + zinssatz ) ** laufzeit ) - 1 ), 2);
     END;
 
 END;
