@@ -7,7 +7,7 @@ CREATE OR REPLACE PACKAGE BODY test_annuitaeten AS
             250000,
             0.05,
             10
-        ) ).to_equal(32376.1437413641738749516685634519369247);
+        ) ).to_equal(32376.14);
     END;
 
 END;
