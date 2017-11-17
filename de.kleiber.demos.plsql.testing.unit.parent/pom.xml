@@ -2,12 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <branch>${git.branch}</branch>
     <db.host>localhost</db.host>
     <db.port>1521</db.port>
-    <db.user>hr</db.user>
+    <db.user.plain>${branch}_${git.commit.id.abbrev}</db.user.plain>
     <db.password>oracle</db.password>
     <db.systemuser>system</db.systemuser>
     <db.systempassword>oracle</db.systempassword>
+    <reporter.include.phase>none</reporter.include.phase>
+    <reporter.exclude.phase>test</reporter.exclude.phase>
     <sqlplus.login.sql.path>${project.parent.basedir}/src</sqlplus.login.sql.path>
   </properties>
   <modelVersion>4.0.0</modelVersion>
@@ -27,6 +30,58 @@
     </resources>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <executions>
+          <execution>
+            <id>default-compile</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>default-testCompile</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.12.4</version>
+        <executions>
+          <execution>
+            <id>default-test</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>default-resources</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>default-testResources</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>default-jar</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
         <version>2.2.3</version>
@@ -41,16 +96,31 @@
               <verbose>false</verbose>
             </configuration>
           </execution>
-          <execution>
-            <id>validate-the-git-infos</id>
-            <goals>
-              <goal>validateRevision</goal>
-            </goals>
-            <!-- *NOTE*: The default phase of validateRevision is verify, but in case you want to change it, you can do so by adding the phase here -->
-            <phase>package</phase>
-          </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.0.0</version>
+          <executions>
+            <execution>
+              <id>regex-property</id>
+              <phase>initialize</phase>
+              <goals>
+                <goal>regex-property</goal>
+              </goals>
+              <configuration>
+                <name>db.user</name>
+                <value>${db.user.plain}</value>
+                <regex>(.*)[/](.*)</regex>
+                <!-- <regex>notmatched</regex>-->
+                <replacement>$1_$2</replacement>
+                <failIfNoMatch>false</failIfNoMatch>
+                <!--<failIfNoMatch>true</failIfNoMatch>-->
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
     </plugins>
   </build>
   <profiles>

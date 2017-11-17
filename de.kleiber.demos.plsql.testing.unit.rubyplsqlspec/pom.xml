@@ -48,7 +48,7 @@
                 <NLS_LANG>German_Germany.UTF8</NLS_LANG>
                 <ORACLE_HOME>/u01/app/oracle/product/12.2/db_1</ORACLE_HOME>
                 <PLSQL_COVERAGE>../../target/results/rspec/coverage</PLSQL_COVERAGE>
-                <DB_USERNAME>${db.user}_${git.commit.id.abbrev}</DB_USERNAME>
+                <DB_USERNAME>${db.user}</DB_USERNAME>
                 <DB_PASSWORD>${db.password}</DB_PASSWORD>
                 <DB_SERVICE>${db.service}</DB_SERVICE>
               </environmentVariables>
