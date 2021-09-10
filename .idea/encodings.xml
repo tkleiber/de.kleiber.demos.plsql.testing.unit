@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.datamodel" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.datamodel/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.parent/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.plsql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.plsql/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.rubyplsqlspec" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.rubyplsqlspec/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.setup" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.setup/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.teardown" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.teardown/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.utplsql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.utplsql/src" charset="UTF-8" />
+  </component>
+</project>

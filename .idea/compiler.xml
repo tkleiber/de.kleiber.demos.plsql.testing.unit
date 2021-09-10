@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="de.kleiber.demos.plsql.testing.unit.utplsql" />
+        <module name="de.kleiber.demos.plsql.testing.unit.teardown" />
+        <module name="de.kleiber.demos.plsql.testing.unit.plsql" />
+        <module name="de.kleiber.demos.plsql.testing.unit.datamodel.jpr" />
+        <module name="de.kleiber.demos.plsql.testing.unit.setup" />
+        <module name="de.kleiber.demos.plsql.testing.unit.rubyutplsqlspec" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="de.kleiber.demos.plsql.testing.unit" target="1.5" />
+      <module name="de.kleiber.demos.plsql.testing.unit.datamodel.jpr" target="1.5" />
+      <module name="de.kleiber.demos.plsql.testing.unit.parent" target="1.5" />
+      <module name="de.kleiber.demos.plsql.testing.unit.plsql" target="1.5" />
+      <module name="de.kleiber.demos.plsql.testing.unit.rubyutplsqlspec" target="1.5" />
+      <module name="de.kleiber.demos.plsql.testing.unit.setup" target="1.5" />
+      <module name="de.kleiber.demos.plsql.testing.unit.teardown" target="1.5" />
+      <module name="de.kleiber.demos.plsql.testing.unit.utplsql" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

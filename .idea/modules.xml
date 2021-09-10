@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.datamodel/de.kleiber.demos.plsql.testing.unit.datamodel.jpr.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.datamodel/de.kleiber.demos.plsql.testing.unit.datamodel.jpr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.parent/de.kleiber.demos.plsql.testing.unit.parent.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.parent/de.kleiber.demos.plsql.testing.unit.parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.plsql/de.kleiber.demos.plsql.testing.unit.plsql.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.plsql/de.kleiber.demos.plsql.testing.unit.plsql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.rubyplsqlspec/de.kleiber.demos.plsql.testing.unit.rubyutplsqlspec.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.rubyplsqlspec/de.kleiber.demos.plsql.testing.unit.rubyutplsqlspec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.setup/de.kleiber.demos.plsql.testing.unit.setup.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.setup/de.kleiber.demos.plsql.testing.unit.setup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.teardown/de.kleiber.demos.plsql.testing.unit.teardown.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.teardown/de.kleiber.demos.plsql.testing.unit.teardown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.utplsql/de.kleiber.demos.plsql.testing.unit.utplsql.iml" filepath="$PROJECT_DIR$/de.kleiber.demos.plsql.testing.unit.utplsql/de.kleiber.demos.plsql.testing.unit.utplsql.iml" />
+    </modules>
+  </component>
+</project>
