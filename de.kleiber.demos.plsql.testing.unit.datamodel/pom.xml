@@ -28,9 +28,9 @@
         <version>3.5.3</version>
         <dependencies>
           <dependency>
-            <groupId>com.oracle.javavm.jrf</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>12.1.0-2-1</version>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>19.3.0.0</version>
           </dependency>
         </dependencies>
         <configuration>
