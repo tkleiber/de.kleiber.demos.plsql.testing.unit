@@ -36,7 +36,7 @@
             <configuration>
               <executable>${sqlplus.path}sqlplus</executable>
               <arguments>
-                <argument>${db.systemuser}/${db.systempassword}@${db.service}</argument>
+                <argument>${db.systemuser}/${db.systempassword}@localhost/${db.service}</argument>
                 <argument>@src/drop.sql</argument>
                 <argument>${db.user}</argument>
                 <argument>${db.password}</argument>
