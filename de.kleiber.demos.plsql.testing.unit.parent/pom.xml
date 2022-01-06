@@ -132,9 +132,9 @@
         </os>
       </activation>
       <properties>
-        <db.service>xe</db.service>
-        <sqlplus.path>C:\Oracle\XE110000\app\oracle\product\11.2.0\server\bin\</sqlplus.path>
-        <utplsql.cli>X:\Doag\utPLSQL-cli\bin\utplsql.bat</utplsql.cli>
+        <db.service>orcl</db.service>
+        <sqlplus.path>C:\PortableApps\instantclient_19_3\</sqlplus.path>
+        <utplsql.cli>C:\PortableApps\utPLSQL-cli\bin\utplsql.bat</utplsql.cli>
         <skip.ruby>true</skip.ruby>
       </properties>
     </profile>
