@@ -30,9 +30,9 @@
           <execution>
             <phase>generate-test-resources</phase>
             <configuration>
-              <tasks>
+              <target>
                 <mkdir dir="./target/results/utplsql/"/>
-              </tasks>
+              </target>
             </configuration>
             <goals>
               <goal>run</goal>
