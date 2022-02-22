@@ -25,7 +25,7 @@
       <plugin>
         <artifactId>liquibase-maven-plugin</artifactId>
         <groupId>org.liquibase</groupId>
-        <version>4.7.1</version>
+        <version>4.8.0</version>
         <dependencies>
           <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
