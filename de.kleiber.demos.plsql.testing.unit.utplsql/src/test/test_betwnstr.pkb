@@ -1,20 +1,40 @@
-CREATE OR REPLACE PACKAGE body test_betwnstr
-AS
-  PROCEDURE normal_case IS
-  BEGIN
-    ut.expect( betwnstr( 'abcdefg', 2, 5 ) ).to_equal('bcde');
-  END;
-  PROCEDURE zero_start_value IS
-  BEGIN
-    ut.expect( betwnstr( 'abcdefg', 0, 5 ) ).to_equal('abcde');
-  END;
-  PROCEDURE way_big_end_value IS
-  BEGIN
-     ut.expect( betwnstr( 'abcdefg', 5, 500 ) ).to_equal('efg');
-  END;
-  PROCEDURE null_string IS
-  BEGIN
-     ut.expect( betwnstr( NULL, 5, 500 ) ).to_equal(NULL);
-  END;
-END;
+create or replace package body test_betwnstr as
+
+  procedure normal_case is
+  begin
+    ut.expect( betwnstr( '1234567', 2, 5 ) ).to_equal('2345');
+  end;
+
+  procedure zero_start_position is
+  begin
+    ut.expect( betwnstr( '1234567', 0, 5 ) ).to_( equal('12345') );
+  end;
+
+  procedure big_end_position is
+  begin
+    ut.expect( betwnstr( '1234567', 0, 500 ) ).to_( equal('1234567') );
+  end;
+
+  procedure null_string is
+  begin
+    ut.expect( betwnstr( null, 2, 5 ) ).to_( be_null() );
+  end;
+
+  procedure bad_params is
+  begin
+    ut.expect( betwnstr( '1234567', 'a', 'b' ) ).to_( be_null() );
+  end;
+
+  procedure bad_test
+  is
+  begin
+    ut.expect( betwnstr( '1234567', 0, 500 ) ).to_( equal('1') );
+  end;
+
+  procedure disabled_test is
+  begin
+    ut.expect( betwnstr( null, null, null) ).not_to( be_null );
+  end;
+
+end;
 /
