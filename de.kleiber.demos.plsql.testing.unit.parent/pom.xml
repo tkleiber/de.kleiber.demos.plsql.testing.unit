@@ -17,6 +17,7 @@
   <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
   <artifactId>de.kleiber.demos.plsql.testing.unit.parent</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
   <description>Project for de.kleiber.demos.plsql.testing.unit.parent</description>
   <build>
     <sourceDirectory>src/</sourceDirectory>
@@ -29,58 +30,6 @@
       </resource>
     </resources>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.10.1</version>
-        <executions>
-          <execution>
-            <id>default-compile</id>
-            <phase>none</phase>
-          </execution>
-          <execution>
-            <id>default-testCompile</id>
-            <phase>none</phase>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.2</version>
-        <executions>
-          <execution>
-            <id>default-test</id>
-            <phase>none</phase>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.2.0</version>
-        <executions>
-          <execution>
-            <id>default-resources</id>
-            <phase>none</phase>
-          </execution>
-          <execution>
-            <id>default-testResources</id>
-            <phase>none</phase>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.2.2</version>
-        <executions>
-          <execution>
-            <id>default-jar</id>
-            <phase>none</phase>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
@@ -113,10 +62,8 @@
                 <name>db.user</name>
                 <value>${db.user.plain}</value>
                 <regex>(.*)[/](.*)</regex>
-                <!-- <regex>notmatched</regex>-->
                 <replacement>$1_$2</replacement>
                 <failIfNoMatch>false</failIfNoMatch>
-                <!--<failIfNoMatch>true</failIfNoMatch>-->
               </configuration>
             </execution>
           </executions>
@@ -153,5 +100,4 @@
       </properties>
     </profile>
   </profiles>
-  <packaging>pom</packaging>
 </project>
