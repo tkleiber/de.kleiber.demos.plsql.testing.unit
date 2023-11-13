@@ -79,7 +79,7 @@
         </os>
       </activation>
       <properties>
-        <db.service>orcl</db.service>
+        <db.service>freepdb1</db.service>
         <sqlplus.path>C:\PortableApps\instantclient_19_3\</sqlplus.path>
         <utplsql.cli>C:\PortableApps\utPLSQL-cli\bin\utplsql.bat</utplsql.cli>
         <skip.ruby>true</skip.ruby>
@@ -93,7 +93,7 @@
         </os>
       </activation>
       <properties>
-        <db.service>orcl</db.service>
+        <db.service>freepdb1</db.service>
         <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
         <utplsql.cli>/home/oracle/utPLSQL-cli/bin/utplsql</utplsql.cli>
         <skip.ruby>false</skip.ruby>

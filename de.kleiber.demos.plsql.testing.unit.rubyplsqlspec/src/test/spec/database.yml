@@ -3,7 +3,7 @@
 default:
   username: HR
   password: oracle
-  database: orcl
+  database: freepdb1
   # host: localhost
   # port: 1521
 

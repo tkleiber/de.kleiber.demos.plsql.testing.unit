@@ -28,6 +28,21 @@
         <version>3.1.0</version>
         <executions>
           <execution>
+            <id>docker-compose-up</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <executable>docker-compose</executable>
+              <workingDirectory>${project.basedir}</workingDirectory>
+              <arguments>
+                <argument>up</argument>
+                <argument>--detach</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
             <id>schema-create</id>
             <goals>
               <goal>exec</goal>
