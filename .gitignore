@@ -83,3 +83,4 @@ fabric.properties
 */target/**
 */classes/**
 de.kleiber.demos.plsql.testing.unit.plsql/src/test_ruby/coverage/
+/sql_scripts/history.log

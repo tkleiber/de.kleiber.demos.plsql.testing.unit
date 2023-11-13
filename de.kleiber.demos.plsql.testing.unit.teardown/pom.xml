@@ -5,9 +5,8 @@
     <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
     <artifactId>de.kleiber.demos.plsql.testing.unit.parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>../de.kleiber.demos.plsql.testing.unit.parent/</relativePath>
+    <relativePath>../de.kleiber.demos.plsql.testing.unit.parent</relativePath>
   </parent>
-  <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
   <artifactId>de.kleiber.demos.plsql.testing.unit.teardown</artifactId>
   <version>1.0-SNAPSHOT</version>
   <description>Project for de.kleiber.demos.plsql.testing.unit.teardown</description>
