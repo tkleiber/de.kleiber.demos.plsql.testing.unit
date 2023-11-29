@@ -20,6 +20,9 @@ services:
     image: container-registry.oracle.com/database/sqlcl:latest # <.>
     volumes:
       - ./sql_scripts:/opt/oracle/sql_scripts/
+    depends_on:
+      oracle-xe:
+        condition: service_healthy
     stdin_open: true
     tty: true
     links:
