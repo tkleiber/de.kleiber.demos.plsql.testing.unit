@@ -14,15 +14,5 @@
         <module name="de.kleiber.demos.plsql.testing.unit.plsql" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="de.kleiber.demos.plsql.testing.unit" target="1.5" />
-      <module name="de.kleiber.demos.plsql.testing.unit.datamodel.jpr" target="1.7" />
-      <module name="de.kleiber.demos.plsql.testing.unit.parent" target="1.5" />
-      <module name="de.kleiber.demos.plsql.testing.unit.plsql" target="1.7" />
-      <module name="de.kleiber.demos.plsql.testing.unit.rubyutplsqlspec" target="1.7" />
-      <module name="de.kleiber.demos.plsql.testing.unit.setup" target="1.7" />
-      <module name="de.kleiber.demos.plsql.testing.unit.teardown" target="1.7" />
-      <module name="de.kleiber.demos.plsql.testing.unit.utplsql" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
