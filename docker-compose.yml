@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  oracle-xe: # <.>
+  oracle-free: # <.>
     environment:
       - ORACLE_PASSWORD=oracle
     image: gvenzl/oracle-free # <.>
@@ -21,11 +21,11 @@ services:
     volumes:
       - ./sql_scripts:/opt/oracle/sql_scripts/
     depends_on:
-      oracle-xe:
+      oracle-free:
         condition: service_healthy
     stdin_open: true
     tty: true
     links:
-      - oracle-xe:oracle-xe # <.>
+      - oracle-free:oracle-free # <.>
 volumes:
   oracle-volume:
