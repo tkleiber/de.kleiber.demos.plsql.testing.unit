@@ -1,31 +1,32 @@
 version: '3.8'
 services:
-  oracle-free: # <.>
+  oracle-free:
+    container_name: oracle-free
     environment:
       - ORACLE_PASSWORD=oracle
-    image: gvenzl/oracle-free # <.>
-    ports:
-      - "1521:1521"
-    restart: unless-stopped
-    volumes:
-      - oracle-volume:/opt/oracle/oradata # <.>
-      - ./src/init:/container-entrypoint-initdb.d # <.>
     healthcheck:
       test: [ "CMD", "healthcheck.sh"]
       interval: 10s
       timeout: 5s
       retries: 10
-
-  oracle-sqlcl: # <.>
-    image: container-registry.oracle.com/database/sqlcl:latest # <.>
+    image: gvenzl/oracle-free
+    ports:
+      - "1521:1521"
+    restart: unless-stopped
     volumes:
-      - ./sql_scripts:/opt/oracle/sql_scripts/
+      - oracle-volume:/opt/oracle/oradata
+      - ./src/init:/container-entrypoint-initdb.d
+
+  oracle-sqlcl:
+    container_name: oracle-sqlcl
     depends_on:
       oracle-free:
         condition: service_healthy
+    image: container-registry.oracle.com/database/sqlcl:latest
     stdin_open: true
     tty: true
-    links:
-      - oracle-free:oracle-free # <.>
+    volumes:
+      - ./sql_scripts:/opt/oracle/sql_scripts/
+
 volumes:
   oracle-volume:
