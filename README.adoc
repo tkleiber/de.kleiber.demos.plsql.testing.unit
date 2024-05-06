@@ -1,0 +1,4 @@
+= Repository for comparing different testing frameworks
+
+* start Docker Desktop
+* run maven verify on root module

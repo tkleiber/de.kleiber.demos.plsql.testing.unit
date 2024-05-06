@@ -1,0 +1,8 @@
+= Todo's
+
+* [x] install newest version of utplsql via start script of the database
+* [x] start of the docker container before tests and stop after test via maven
+* [x] sqlplus does not wait for healthcheck.sh
+* [ ] use sqlcli from the container instead of sqlplus
+* [ ] running utplsql via maven instead of sqlcli
+* [ ] no volume for the database
