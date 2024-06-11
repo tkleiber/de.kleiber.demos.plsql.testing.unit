@@ -54,7 +54,7 @@
                 <argument>oracle-sqlcl</argument>
                 <argument>sql</argument>
                 <argument>${db.systemuser}/${db.systempassword}@//oracle-free/${db.service}</argument>
-                <argument>@/opt/oracle/sql_scripts/create.sql</argument>
+                <argument>@/opt/oracle/sql_scripts/de.kleiber.demos.plsql.testing.unit.setup/create.sql</argument>
                 <argument>${db.user}</argument>
                 <argument>${db.password}</argument>
               </arguments>
