@@ -40,7 +40,7 @@
     </dependency>
     <dependency>
       <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
-      <artifactId>de.kleiber.demos.plsql.testing.unit.datamodel.jpr</artifactId>
+      <artifactId>de.kleiber.demos.plsql.testing.unit.datamodel</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
     </dependency>
