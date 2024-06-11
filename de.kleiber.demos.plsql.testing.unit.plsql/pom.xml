@@ -40,14 +40,10 @@
                 <argument>oracle-sqlcl</argument>
                 <argument>sql</argument>
                 <argument>${db.user}/${db.password}@//oracle-free/${db.service}</argument>
-                <argument>@/opt/oracle/sql_scripts/compile.sql</argument>
+                <argument>@/opt/oracle/sql_scripts/de.kleiber.demos.plsql.testing.unit.utplsql/compile.sql</argument>
                 <argument>${db.user}</argument>
-                <argument>/opt/oracle/sql_scripts</argument>
+                <argument>/opt/oracle/sql_scripts/de.kleiber.demos.plsql.testing.unit.utplsql</argument>
               </arguments>
-              <environmentVariables>
-                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
-                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
-              </environmentVariables>
             </configuration>
           </execution>
         </executions>
