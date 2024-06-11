@@ -5,14 +5,13 @@
     <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
     <artifactId>de.kleiber.demos.plsql.testing.unit.parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>../de.kleiber.demos.plsql.testing.unit.parent/</relativePath>
+    <relativePath>../de.kleiber.demos.plsql.testing.unit.parent</relativePath>
   </parent>
   <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
   <artifactId>de.kleiber.demos.plsql.testing.unit.utplsql</artifactId>
   <version>1.0-SNAPSHOT</version>
   <description>Project for de.kleiber.demos.plsql.testing.unit.utplsql</description>
   <build>
-    <sourceDirectory>src/</sourceDirectory>
     <resources>
       <resource>
         <directory>${basedir}</directory>
@@ -52,17 +51,16 @@
             </goals>
             <phase>test-compile</phase>
             <configuration>
-              <executable>${sqlplus.path}sqlplus</executable>
+              <executable>docker-compose</executable>
               <arguments>
-                <argument>${db.user}/${db.password}@localhost/${db.service}</argument>
-                <argument>@src/test/compile.sql</argument>
+                <argument>exec</argument>
+                <argument>oracle-sqlcl</argument>
+                <argument>sql</argument>
+                <argument>${db.user}/${db.password}@//oracle-free/${db.service}</argument>
+                <argument>@/opt/oracle/sql_scripts/de.kleiber.demos.plsql.testing.unit.utplsql/compile.sql</argument>
                 <argument>${db.user}</argument>
-                <argument>${project.build.sourceDirectory}</argument>
+                <argument>/opt/oracle/sql_scripts/de.kleiber.demos.plsql.testing.unit.utplsql</argument>
               </arguments>
-              <environmentVariables>
-                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
-                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
-              </environmentVariables>
             </configuration>
           </execution>
           <execution>
