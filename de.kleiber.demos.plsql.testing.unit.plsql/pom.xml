@@ -34,12 +34,15 @@
             </goals>
             <phase>compile</phase>
             <configuration>
-              <executable>${sqlplus.path}sqlplus</executable>
+              <executable>docker-compose</executable>
               <arguments>
-                <argument>${db.user}/${db.password}@localhost/${db.service}</argument>
-                <argument>@src/main/compile.sql</argument>
+                <argument>exec</argument>
+                <argument>oracle-sqlcl</argument>
+                <argument>sql</argument>
+                <argument>${db.user}/${db.password}@//oracle-free/${db.service}</argument>
+                <argument>@/opt/oracle/sql_scripts/compile.sql</argument>
                 <argument>${db.user}</argument>
-                <argument>${project.build.sourceDirectory}</argument>
+                <argument>/opt/oracle/sql_scripts</argument>
               </arguments>
               <environmentVariables>
                 <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
