@@ -58,10 +58,6 @@
                 <argument>${db.user}</argument>
                 <argument>${db.password}</argument>
               </arguments>
-              <!--environmentVariables>
-                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
-                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
-              </environmentVariables-->
             </configuration>
           </execution>
         </executions>
