@@ -48,17 +48,20 @@
             </goals>
             <phase>initialize</phase>
             <configuration>
-              <executable>${sqlplus.path}sqlplus</executable>
+              <executable>docker-compose</executable>
               <arguments>
-                <argument>${db.systemuser}/${db.systempassword}@localhost/${db.service}</argument>
-                <argument>@src/create.sql</argument>
+                <argument>exec</argument>
+                <argument>oracle-sqlcl</argument>
+                <argument>sql</argument>
+                <argument>${db.systemuser}/${db.systempassword}@//oracle-free/${db.service}</argument>
+                <argument>@/opt/oracle/sql_scripts/create.sql</argument>
                 <argument>${db.user}</argument>
                 <argument>${db.password}</argument>
               </arguments>
-              <environmentVariables>
+              <!--environmentVariables>
                 <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
                 <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
-              </environmentVariables>
+              </environmentVariables-->
             </configuration>
           </execution>
         </executions>
