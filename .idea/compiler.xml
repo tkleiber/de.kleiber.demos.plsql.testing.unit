@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="de.kleiber.demos.plsql.testing.unit.utplsql" />
         <module name="de.kleiber.demos.plsql.testing.unit.datamodel.jpr" />
+        <module name="de.kleiber.demos.plsql.testing.unit.rubyutplsqlspec" />
+        <module name="de.kleiber.demos.plsql.testing.unit.datamodel" />
+        <module name="de.kleiber.demos.plsql.testing.unit.utplsql" />
         <module name="de.kleiber.demos.plsql.testing.unit.setup" />
         <module name="de.kleiber.demos.plsql.testing.unit.teardown" />
-        <module name="de.kleiber.demos.plsql.testing.unit.rubyutplsqlspec" />
         <module name="de.kleiber.demos.plsql.testing.unit.plsql" />
       </profile>
     </annotationProcessing>
