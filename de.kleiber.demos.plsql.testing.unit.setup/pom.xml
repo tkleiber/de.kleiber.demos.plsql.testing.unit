@@ -27,15 +27,16 @@
         <version>3.4.1</version>
         <executions>
           <execution>
-            <id>docker-compose-up</id>
+            <id>docker compose up</id>
             <goals>
               <goal>exec</goal>
             </goals>
             <phase>initialize</phase>
             <configuration>
-              <executable>docker-compose</executable>
+              <executable>docker</executable>
               <workingDirectory>${project.basedir}</workingDirectory>
               <arguments>
+                <argument>compose</argument>
                 <argument>up</argument>
                 <argument>--detach</argument>
               </arguments>
@@ -48,8 +49,9 @@
             </goals>
             <phase>initialize</phase>
             <configuration>
-              <executable>docker-compose</executable>
+              <executable>docker</executable>
               <arguments>
+                <argument>compose</argument>
                 <argument>exec</argument>
                 <argument>oracle-sqlcl</argument>
                 <argument>sql</argument>

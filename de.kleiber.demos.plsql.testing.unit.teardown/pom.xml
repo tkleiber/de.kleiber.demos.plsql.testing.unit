@@ -47,15 +47,16 @@
             </configuration>
           </execution>
           <execution>
-            <id>docker-compose-down</id>
+            <id>docker compose-down</id>
             <goals>
               <goal>exec</goal>
             </goals>
             <phase>verify</phase>
             <configuration>
-              <executable>docker-compose</executable>
+              <executable>docker</executable>
               <workingDirectory>${project.basedir}</workingDirectory>
               <arguments>
+                <argument>compose</argument>
                 <argument>down</argument>
               </arguments>
             </configuration>

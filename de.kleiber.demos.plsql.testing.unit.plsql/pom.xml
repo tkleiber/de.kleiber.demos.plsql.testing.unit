@@ -34,8 +34,9 @@
             </goals>
             <phase>compile</phase>
             <configuration>
-              <executable>docker-compose</executable>
+              <executable>docker</executable>
               <arguments>
+                <argument>compose</argument>
                 <argument>exec</argument>
                 <argument>oracle-sqlcl</argument>
                 <argument>sql</argument>
