@@ -71,13 +71,17 @@
             </goals>
             <phase>${reporter.exclude.phase}</phase>
             <configuration>
-              <executable>${utplsql.cli}</executable>
+              <executable>docker</executable>
               <arguments>
-                <argument>run</argument>
-                <argument>${db.user}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
+                <argument>compose</argument>
+                <argument>exec</argument>
+                <argument>--tty</argument>
+                <argument>--interactive</argument>
+                <argument>oracle-free</argument>
+                <argument>bash</argument>
+                <argument>-c</argument>
+                <argument>source /opt/oracle/oradata/java.env;/opt/oracle/oradata/utPLSQL-cli/bin/utplsql run ${db.user}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
               </arguments>
-              <environmentVariables>
-              </environmentVariables>
             </configuration>
           </execution>
           <execution>
@@ -87,21 +91,17 @@
             </goals>
             <phase>${reporter.include.phase}</phase>
             <configuration>
-              <executable>${utplsql.cli}</executable>
+              <executable>docker</executable>
               <arguments>
-                <argument>run</argument>
-                <argument>${db.user}/${db.password}@${db.host}:${db.port}/${db.service}</argument>
+                <argument>compose</argument>
+                <argument>exec</argument>
+                <argument>--tty</argument>
+                <argument>--interactive</argument>
+                <argument>oracle-free</argument>
+                <argument>bash</argument>
                 <argument>-c</argument>
-                <argument>-f=ut_documentation_reporter</argument>
-                <argument>-o=./target/results/utplsql/ut_documentation_reporter.log</argument>
-                <argument>-s</argument>
-                <argument>-f=ut_coverage_html_reporter</argument>
-                <argument>-o=./target/results/utplsql/ut_coverage_html_reporter.html</argument>
-                <argument>-f=ut_xunit_reporter</argument>
-                <argument>-o=./target/results/utplsql/ut_xunit_reporter.xml</argument>
+                <argument>source /opt/oracle/oradata/java.env;/opt/oracle/oradata/utPLSQL-cli/bin/utplsql run ${db.user}/${db.password}@${db.host}:${db.port}/${db.service} -c -f=ut_documentation_reporter -o=./target/results/utplsql/ut_documentation_reporter.log -s -f=ut_coverage_html_reporter -o=./target/results/utplsql/ut_coverage_html_reporter.html -f=ut_xunit_reporter -o=./target/results/utplsql/ut_xunit_reporter.xml</argument>
               </arguments>
-              <environmentVariables>
-              </environmentVariables>
             </configuration>
           </execution>
         </executions>
