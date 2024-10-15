@@ -56,7 +56,7 @@
                 <argument>oracle-free</argument>
                 <argument>bash</argument>
                 <argument>-c</argument>
-                <argument>chmod +x /container-entrypoint-initdb.d/03_check_for_java_home.sh;/container-entrypoint-initdb.d/03_check_for_java_home.sh</argument>
+                <argument>whoami;ls -la /container-entrypoint-initdb.d/03_check_for_java_home.sh;chmod +x /container-entrypoint-initdb.d/03_check_for_java_home.sh;/container-entrypoint-initdb.d/03_check_for_java_home.sh</argument>
               </arguments>
             </configuration>
           </execution>
