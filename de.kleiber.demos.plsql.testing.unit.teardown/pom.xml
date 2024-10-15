@@ -33,17 +33,17 @@
             </goals>
             <phase>verify</phase>
             <configuration>
-              <executable>${sqlplus.path}sqlplus</executable>
+              <executable>docker</executable>
               <arguments>
-                <argument>${db.systemuser}/${db.systempassword}@localhost/${db.service}</argument>
-                <argument>@src/drop.sql</argument>
+                <argument>compose</argument>
+                <argument>exec</argument>
+                <argument>oracle-sqlcl</argument>
+                <argument>sql</argument>
+                <argument>${db.systemuser}/${db.systempassword}@//oracle-free/${db.service}</argument>
+                <argument>@/opt/oracle/sql_scripts/de.kleiber.demos.plsql.testing.unit.teardown/drop.sql</argument>
                 <argument>${db.user}</argument>
                 <argument>${db.password}</argument>
               </arguments>
-              <environmentVariables>
-                <SQLPATH>${sqlplus.login.sql.path}</SQLPATH>
-                <ORACLE_PATH>${sqlplus.login.sql.path}</ORACLE_PATH>
-              </environmentVariables>
             </configuration>
           </execution>
           <execution>

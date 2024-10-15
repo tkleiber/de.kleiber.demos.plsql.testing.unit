@@ -7,11 +7,11 @@
     <db.port>1521</db.port>
     <db.user.plain>${branch}_${git.commit.id.abbrev}</db.user.plain>
     <db.password>oracle</db.password>
+    <db.service>freepdb1</db.service>
     <db.systemuser>system</db.systemuser>
     <db.systempassword>oracle</db.systempassword>
     <reporter.include.phase>none</reporter.include.phase>
     <reporter.exclude.phase>test</reporter.exclude.phase>
-    <sqlplus.login.sql.path>${project.parent.basedir}/src</sqlplus.login.sql.path>
   </properties>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.kleiber.demos.plsql.testing.unit</groupId>
@@ -70,30 +70,4 @@
         </plugin>
     </plugins>
   </build>
-  <profiles>
-    <profile>
-      <id>Windows</id>
-      <activation>
-        <os>
-          <family>Windows</family>
-        </os>
-      </activation>
-      <properties>
-        <db.service>freepdb1</db.service>
-        <sqlplus.path>C:\PortableApps\instantclient_19_3\</sqlplus.path>
-      </properties>
-    </profile>
-    <profile>
-      <id>Linux</id>
-      <activation>
-        <os>
-          <family>Linux</family>
-        </os>
-      </activation>
-      <properties>
-        <db.service>freepdb1</db.service>
-        <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
-      </properties>
-    </profile>
-  </profiles>
 </project>
