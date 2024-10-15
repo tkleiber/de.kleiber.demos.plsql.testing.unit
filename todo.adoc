@@ -2,3 +2,4 @@
 
 * [ ] rubyplsqlspec-test -> skip -> false
 * [ ] Plugin [INTERNAL, EXTERNAL] validation issues were detected in following plugin(s)
+* [ ] publish test results
