@@ -81,7 +81,6 @@
       <properties>
         <db.service>freepdb1</db.service>
         <sqlplus.path>C:\PortableApps\instantclient_19_3\</sqlplus.path>
-        <skip.ruby>true</skip.ruby>
       </properties>
     </profile>
     <profile>
@@ -94,7 +93,6 @@
       <properties>
         <db.service>freepdb1</db.service>
         <sqlplus.path>/home/oracle/LDLIB/</sqlplus.path>
-        <skip.ruby>false</skip.ruby>
       </properties>
     </profile>
   </profiles>

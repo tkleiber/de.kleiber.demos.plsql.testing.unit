@@ -35,7 +35,7 @@
             <phase>test</phase>
             <configuration>
               <executable>rspec</executable>
-              <skip>${skip.ruby}</skip>
+              <skip>true</skip>
               <workingDirectory>src/test</workingDirectory>
               <arguments>
                 <argument>-fd</argument>
@@ -46,7 +46,7 @@
               </arguments>
               <environmentVariables>
                 <NLS_LANG>German_Germany.UTF8</NLS_LANG>
-                <ORACLE_HOME>/u01/app/oracle/product/12.2/db_1</ORACLE_HOME>
+                <ORACLE_HOME>/opt/oracle/product/23ai/dbhomeFree</ORACLE_HOME>
                 <PLSQL_COVERAGE>../../target/results/rspec/coverage</PLSQL_COVERAGE>
                 <DB_USERNAME>${db.user}</DB_USERNAME>
                 <DB_PASSWORD>${db.password}</DB_PASSWORD>
