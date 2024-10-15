@@ -43,6 +43,24 @@
             </configuration>
           </execution>
           <execution>
+            <id>wait-for-java-home</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <executable>docker</executable>
+              <arguments>
+                <argument>compose</argument>
+                <argument>exec</argument>
+                <argument>oracle-free</argument>
+                <argument>bash</argument>
+                <argument>-c</argument>
+                <argument>chmod +x /container-entrypoint-initdb.d/03_check_for_java_home.sh;/container-entrypoint-initdb.d/03_check_for_java_home.sh</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
             <id>schema-create</id>
             <goals>
               <goal>exec</goal>
@@ -59,24 +77,6 @@
                 <argument>@/opt/oracle/sql_scripts/de.kleiber.demos.plsql.testing.unit.setup/create.sql</argument>
                 <argument>${db.user}</argument>
                 <argument>${db.password}</argument>
-              </arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>wait-for-java-home</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>initialize</phase>
-            <configuration>
-              <executable>docker</executable>
-              <arguments>
-                <argument>compose</argument>
-                <argument>exec</argument>
-                <argument>oracle-free</argument>
-                <argument>bash</argument>
-                <argument>-c</argument>
-                <argument>/container-entrypoint-initdb.d/03_check_for_java_home.sh</argument>
               </arguments>
             </configuration>
           </execution>
