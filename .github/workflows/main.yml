@@ -37,21 +37,7 @@ jobs:
           cache: maven
       - name: Test with Maven
         run: mvn -B verify --file pom.xml
-#      - name: Upload Test Results as Artefact
-#        uses: actions/upload-artifact@v4
-#        if: always()
-#        with:
-#          name: test-results
-#          path: '**/target/surefire-reports/*.xml'
-#      - name: Publish Test Results
-#        uses: dorny/test-reporter@v1
-#        if: always()
-#        with:
-#          artifact: test-results
-#          name: Maven Test Results
-#          path: '**/*.xml'
-#          reporter: java-junit
-#          fail-on-error: true
+        continue-on-error: false
 
   dependabot_auto_approve:
     name: Dependabot auto-approve
